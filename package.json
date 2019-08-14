@@ -1,0 +1,30 @@
+{
+  "name": "connect-messenger",
+  "version": "0.0.1",
+  "description": "A simple connect wrapper interface to Facebook Messenger Platform API.",
+  "main": ".",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/must/connect-messenger"
+  },
+  "author": "Mustapha Ben Chaaben <mustapha@connect-platform.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/must/connect-messnger/issues"
+  },
+  "homepage": "https://github.com/must/connect-messnger#readme",
+  "peerDependencies": {
+    "connect-platform": "*"
+  },
+  "devDependencies": {
+    "connect-platform": "^0.2.16",
+    "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "messenger-node": "^0.3.2"
+  }
+}

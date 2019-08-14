@@ -1,0 +1,108 @@
+{
+  "path": "/client/getMessagingInsights/",
+  "method": "GET",
+  "public": true,
+  "in": [],
+  "out": [
+    "result"
+  ],
+  "configs": [],
+  "control": [],
+  "nodes": [
+    {
+      "tag": "v0",
+      "box": {
+        "left": 281,
+        "right": 453,
+        "top": 142,
+        "bottom": 142
+      },
+      "expr": "[\n  'page_messages_active_threads_unique',\n  'page_messages_blocked_conversations_unique',\n  'page_messages_reported_conversations_unique',\n  'page_messages_reported_conversations_by_report_type_unique'\n]"
+    },
+    {
+      "tag": "c0",
+      "box": {
+        "left": 753,
+        "right": 995,
+        "top": 246,
+        "bottom": 428
+      },
+      "path": "/fb/messaging/Client/getMessagingInsights"
+    },
+    {
+      "tag": "v1",
+      "box": {
+        "left": 411,
+        "right": 583,
+        "top": 486,
+        "bottom": 486
+      },
+      "expr": "new Date().getTime()"
+    },
+    {
+      "tag": "e0",
+      "box": {
+        "left": 528,
+        "right": 700,
+        "top": 283,
+        "bottom": 361
+      },
+      "in": [
+        "now"
+      ],
+      "expr": "now-864000"
+    }
+  ],
+  "links": [
+    [
+      {
+        "v0": "result"
+      },
+      {
+        "c0": {
+          "in": "metrics"
+        }
+      }
+    ],
+    [
+      {
+        "v1": "result"
+      },
+      {
+        "e0": {
+          "in": "now"
+        }
+      }
+    ],
+    [
+      {
+        "c0": {
+          "out": "result"
+        }
+      },
+      {
+        "out": "result"
+      }
+    ],
+    [
+      {
+        "e0": "result"
+      },
+      {
+        "c0": {
+          "in": "since"
+        }
+      }
+    ],
+    [
+      {
+        "v1": "result"
+      },
+      {
+        "c0": {
+          "in": "until"
+        }
+      }
+    ]
+  ]
+}
