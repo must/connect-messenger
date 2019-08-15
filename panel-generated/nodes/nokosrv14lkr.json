@@ -27,7 +27,7 @@
         "top": 246,
         "bottom": 428
       },
-      "path": "/fb/messaging/Client/getMessagingInsights"
+      "path": "/fb/messaging/Client/getMessagingInsightsGET"
     },
     {
       "tag": "v1",
@@ -56,16 +56,6 @@
   "links": [
     [
       {
-        "v0": "result"
-      },
-      {
-        "c0": {
-          "in": "metrics"
-        }
-      }
-    ],
-    [
-      {
         "v1": "result"
       },
       {
@@ -76,12 +66,12 @@
     ],
     [
       {
-        "c0": {
-          "out": "result"
-        }
+        "v0": "result"
       },
       {
-        "out": "result"
+        "c0": {
+          "in": "metrics"
+        }
       }
     ],
     [
@@ -102,6 +92,16 @@
         "c0": {
           "in": "until"
         }
+      }
+    ],
+    [
+      {
+        "c0": {
+          "out": "result"
+        }
+      },
+      {
+        "out": "result"
       }
     ]
   ]

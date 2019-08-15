@@ -60,9 +60,27 @@ module.exports.platform = {
         "credentials": {
           "page_token": "<PAGE TOKEN>",
           "app_token": "<APP TOKEN>",
-          "api_version": "<API version / example: v2.11>"
+          "api_version": "<API version / example: v2.11>",
+          "verify_token": "<VERIFY_token>"
         },
-        "region": "eu-central-1"
+        "callback_nodes": {
+          "message": "/callback/message",
+          "messaging_postback": "/callback/messaging_postback",
+          "messaging_account_linking": "/callback/messaging_account_linking",
+          "messaging_checkout_updates": "/callback/messaging_checkout_updates",
+          "message_deliveries": "/callback/message_deliveries",
+          "message_echoes": "/callback/message_echoes",
+          "messaging_game_plays": "/callback/messaging_game_plays",
+          "messaging_handovers": "/callback/messaging_handovers",
+          "messaging_optins": "/callback/messaging_optins",
+          "messaging_payments": "/callback/messaging_payments",
+          "messaging_policy_enforcement": "/callback/messaging_policy_enforcement",
+          "messaging_optins": "/callback/messaging_optins",
+          "messaging_pre_checkouts": "/callback/messaging_pre_checkouts",
+          "message_reads": "/callback/message_reads",
+          "messaging_referrals": "/callback/messaging_referrals",
+          "messaging_standby": "/callback/messaging_standby"
+        }
       }
     }
   }

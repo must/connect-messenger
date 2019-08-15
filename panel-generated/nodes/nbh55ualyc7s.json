@@ -1,0 +1,62 @@
+{
+  "path": "/callback/messaging_postback",
+  "method": "GET",
+  "public": false,
+  "in": [
+    "sender_psid",
+    "postback",
+    "webhook_event"
+  ],
+  "out": [],
+  "configs": [],
+  "control": [],
+  "nodes": [
+    {
+      "tag": "e0",
+      "box": {
+        "left": 323,
+        "right": 495,
+        "top": 135,
+        "bottom": 300
+      },
+      "in": [
+        "sender_psid",
+        "postback",
+        "webhook_event"
+      ],
+      "expr": "console.log(sender_psid);\nconsole.log(postback);\nconsole.log(webhook_event);"
+    }
+  ],
+  "links": [
+    [
+      {
+        "in": "sender_psid"
+      },
+      {
+        "e0": {
+          "in": "sender_psid"
+        }
+      }
+    ],
+    [
+      {
+        "in": "postback"
+      },
+      {
+        "e0": {
+          "in": "postback"
+        }
+      }
+    ],
+    [
+      {
+        "in": "webhook_event"
+      },
+      {
+        "e0": {
+          "in": "webhook_event"
+        }
+      }
+    ]
+  ]
+}
