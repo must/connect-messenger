@@ -49,14 +49,5 @@ platform.core.node({
     .then(res => {
       output('result', res);
     });
-    /*
-    aws.iam.createUser(params, function(err, data) {
-      if (err) {
-        console.log(err, err.stack); // an error occurred
-        control('error');
-      } else {
-        output('user', data.User);           // successful response
-      }
-    });*/
   }
 );

@@ -33,32 +33,9 @@ module.exports.platform = {
        *
        */
       native : [
-        'client/getMessagingInsights',
-        /*'ECR/token/get',
-
-        'ECR/repository/create',
-        'ECR/repository/delete',
-        'ECR/repository/describe',
-        'ECR/repository/policy/set',
-        'ECR/repository/policy/get',
-        'ECR/repository/policy/parse',
-        'ECR/repository/policy/create/allowPushPull',
-        
-        'ECR/repositories/describe',
-
-        'IAM/user/create',
-        'IAM/user/get',
-
-        'IAM/user/key/create',
-        'IAM/user/key/delete',
-        'IAM/user/key/list',
-
-        'IAM/user/policy/create',
-        'IAM/user/policy/get',
-        'IAM/user/policy/attach',
-        'IAM/user/policy/create/iam/getAuthorizationToken',
-        'IAM/user/policy/delete',
-        'IAM/user/policies/list',*/
+        '/client/getMessagingInsights',
+        '/webhook/post',
+        '/webhook/get',
        ]
     },
     /**
@@ -70,32 +47,8 @@ module.exports.platform = {
      *
      */
     aliases: {
-      '/messaging/client/getMessagingInsights': 'client/getMessagingInsights',
-      /*'/ecr/token/get': '/aws/ECR/token/get',
-      
-      '/ecr/repository/create': '/aws/ECR/repository/create',
-      '/ecr/repository/delete': '/aws/ECR/repository/delete',
-      '/ecr/repository/describe': '/aws/ECR/repository/describe',
-      '/ecr/repository/policy/set': '/aws/ECR/repository/policy/set',
-      '/ecr/repository/policy/get': '/aws/ECR/repository/policy/get',
-      '/ecr/repository/policy/parse': '/aws/ECR/repository/policy/parse',
-      '/ecr/repository/policy/create/allowPushPull': '/aws/ECR/repository/policy/create/allowPushPull',
-
-      '/ecr/repositories/describe': '/aws/ECR/repositories/describe',
-
-      '/iam/user/create': '/aws/IAM/user/create',
-      '/iam/user/get': '/aws/IAM/user/get',
-
-      '/iam/user/key/create': '/aws/IAM/user/key/create',
-      '/iam/user/key/delete': '/aws/IAM/user/key/delete',
-      '/iam/user/key/list': '/aws/IAM/user/key/list',
-
-      '/iam/user/policy/create': '/aws/IAM/user/policy/create',
-      '/iam/user/policy/get': '/aws/IAM/user/policy/get',
-      '/iam/user/policy/attach': '/aws/IAM/user/policy/attach',
-      '/iam/user/policy/create/iam/getAuthorizationToken': '/aws/IAM/user/policy/create/iam/getAuthorizationToken',
-      '/iam/user/policy/delete': '/aws/IAM/user/policy/delete',
-      '/iam/user/policies/list': '/aws/IAM/user/policies/list',*/
+      '/messaging/client/getMessagingInsights': '/fb/messaging/client/getMessagingInsights',
+      '/messaging/webhook': '/fb/messaging/webhook',
     }
   },
   hints: {
