@@ -1,5 +1,5 @@
-# connect-aws
-The official CONNECT platform messenger  package
+# connect-messenger
+The official CONNECT platform messenger package
 
 
 ## how to setup
