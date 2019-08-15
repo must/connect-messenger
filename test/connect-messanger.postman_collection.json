@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "4dc365fb-6218-45df-8ebf-de63a2000802",
+		"name": "connect-messanger",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:4000/client/getMessagingInsights",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:4000/client/getMessagingInsights",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"client",
+						"getMessagingInsights"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4000/fb/messaging/webhook",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"object\": \"page\", \"entry\": [{\"messaging\": [{\"message\": \"TEST_MESSAGE\"}]}]}"
+				},
+				"url": {
+					"raw": "localhost:4000/fb/messaging/webhook",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"fb",
+						"messaging",
+						"webhook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4000/fb/messaging/webhook?hub.verify_token=Glamor-friable-meddle-closeGlamor-friable-meddle-close&hub.challenge=CHALLENGE_ACCEPTED&hub.mode=subscribe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:4000/fb/messaging/webhook?hub.verify_token=Glamor-friable-meddle-closeGlamor-friable-meddle-close&hub.challenge=CHALLENGE_ACCEPTED&hub.mode=subscribe",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"fb",
+						"messaging",
+						"webhook"
+					],
+					"query": [
+						{
+							"key": "hub.verify_token",
+							"value": "Glamor-friable-meddle-closeGlamor-friable-meddle-close"
+						},
+						{
+							"key": "hub.challenge",
+							"value": "CHALLENGE_ACCEPTED"
+						},
+						{
+							"key": "hub.mode",
+							"value": "subscribe"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
