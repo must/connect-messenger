@@ -1,6 +1,7 @@
 {
   "/callback/messaging_postback": "nbh55ualyc7s",
-  "/callback/message": "nfl66ubklo9",
   "/client/getMessagingInsights/": "nokosrv14lkr",
-  "/client/sendText": "nd008ww68g8"
+  "/callback/message": "nfl66ubklo9",
+  "/client/sendText": "nd008ww68g8",
+  "/callback/message_reads": "nbh91fhv40a6"
 }

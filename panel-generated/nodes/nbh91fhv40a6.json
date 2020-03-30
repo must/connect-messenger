@@ -1,0 +1,62 @@
+{
+  "path": "/callback/message_reads",
+  "method": "GET",
+  "public": false,
+  "in": [
+    "sender_psid",
+    "read",
+    "webhook_event"
+  ],
+  "out": [],
+  "configs": [],
+  "control": [],
+  "nodes": [
+    {
+      "tag": "e0",
+      "box": {
+        "left": 392,
+        "right": 564,
+        "top": 140,
+        "bottom": 320
+      },
+      "in": [
+        "sender_psid",
+        "read",
+        "webhook_event"
+      ],
+      "expr": "console.log('/callback/read');\nconsole.log(sender_psid);\nconsole.log(read);\nconsole.log(webhook_event);"
+    }
+  ],
+  "links": [
+    [
+      {
+        "in": "sender_psid"
+      },
+      {
+        "e0": {
+          "in": "sender_psid"
+        }
+      }
+    ],
+    [
+      {
+        "in": "read"
+      },
+      {
+        "e0": {
+          "in": "read"
+        }
+      }
+    ],
+    [
+      {
+        "in": "webhook_event"
+      },
+      {
+        "e0": {
+          "in": "webhook_event"
+        }
+      }
+    ]
+  ]
+}

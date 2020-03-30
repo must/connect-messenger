@@ -9,7 +9,9 @@
   ],
   "out": [],
   "configs": [],
-  "control": [],
+  "control": [
+    "error"
+  ],
   "nodes": [
     {
       "tag": "e0",
@@ -25,6 +27,39 @@
         "webhook_event"
       ],
       "expr": "console.log('/callback/message');\nconsole.log(sender_psid);\nconsole.log(message);\nconsole.log(webhook_event);"
+    },
+    {
+      "tag": "c0",
+      "box": {
+        "left": 670,
+        "right": 912,
+        "top": 388,
+        "bottom": 544
+      },
+      "path": "/messaging/client/getUserProfile"
+    },
+    {
+      "tag": "v0",
+      "box": {
+        "left": 359,
+        "right": 531,
+        "top": 651,
+        "bottom": 651
+      },
+      "expr": "[\n  'id',\n  'first_name',\n  'last_name',\n  'profile_pic'\n]"
+    },
+    {
+      "tag": "e1",
+      "box": {
+        "left": 1124,
+        "right": 1296,
+        "top": 481,
+        "bottom": 559
+      },
+      "in": [
+        "result"
+      ],
+      "expr": "console.log(result);"
     }
   ],
   "links": [
@@ -55,6 +90,48 @@
       {
         "e0": {
           "in": "webhook_event"
+        }
+      }
+    ],
+    [
+      {
+        "in": "sender_psid"
+      },
+      {
+        "c0": {
+          "in": "psid"
+        }
+      }
+    ],
+    [
+      {
+        "v0": "result"
+      },
+      {
+        "c0": {
+          "in": "fields"
+        }
+      }
+    ],
+    [
+      {
+        "c0": {
+          "control": "error"
+        }
+      },
+      {
+        "out": "error"
+      }
+    ],
+    [
+      {
+        "c0": {
+          "out": "result"
+        }
+      },
+      {
+        "e1": {
+          "in": "result"
         }
       }
     ]

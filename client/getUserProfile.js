@@ -1,6 +1,6 @@
 /**
  *
- * sendText
+ * getUserProfile
  *
  */
 const platform = require('connect-platform');
@@ -8,13 +8,13 @@ const platform = require('connect-platform');
 const messengerAPI = require('../connection');
 
 platform.core.node({
-  path: '/fb/messaging/client/sendText',
+  path: '/fb/messaging/client/getUserProfile',
 
   public: false,
 
-  method: 'POST',
+  method: 'GET',
 
-  inputs: ['recipient', 'text'],
+  inputs: ['psid', 'fields'],
 
   outputs: ['result'],
 
@@ -24,8 +24,8 @@ platform.core.node({
     node: 'Send <span class="hl-blue">text</span> message to recipient <span class="hl-blue">recipient</span>.',
 
     inputs: {
-      recipient: 'Recipient Object An object that describes the message recipient in the format: {<id_type>: <id>}. For example, sends to a PSID would be {"id": 123456}, to a phone number { "phone_number": "+1 (408) 444-4444"}.',
-      text: 'Text String The text to send.'
+      psid: 'psid Integer A valid user <span class="hl-blue">PSID</span>.',
+      fields: 'fields Array<String> Optional. An array list of the user profile filds to retrieve. For a list of available fields, see the <a href="https://developers.facebook.com/docs/messenger-platform/identity/user-profile#fields">Messenger Platform docs</a>.'
     },
     
     outputs: {
@@ -38,12 +38,12 @@ platform.core.node({
   }
 },
   (inputs, output, control) => {
-    messengerAPI.client.sendText(inputs.recipient, inputs.text)
+    messengerAPI.client.getUserProfile(inputs.psid, inputs.fields)
     .then(res => {
+      // log the api response
       output('result', res);
     }).catch(err => {
       console.error(err);
-      control('error');
     });
   }
 );

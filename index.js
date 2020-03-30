@@ -35,6 +35,7 @@ module.exports.platform = {
       native : [
         '/client/getMessagingInsights',
         '/client/sendText',
+        '/client/getUserProfile',
         '/webhook/post',
         '/webhook/get',
        ]
@@ -50,6 +51,7 @@ module.exports.platform = {
     aliases: {
       '/messaging/client/getMessagingInsights': '/fb/messaging/client/getMessagingInsights', // Alias to getMessagingInsights
       '/messaging/client/sendText': '/fb/messaging/client/sendText', // Alias to sendText
+      '/messaging/client/getUserProfile': '/fb/messaging/client/getUserProfile', // Alias to sendT
       '/messaging/webhook': '/fb/messaging/webhook',
     }
   },
@@ -69,20 +71,19 @@ module.exports.platform = {
           "verify_token": "<VERIFY_token>"
         },
         "callback_nodes": {
-          "message": "/callback/message",
-          "messaging_postback": "/callback/messaging_postback",
+          "message": "/callback/message", // parameters: sender_psid, message, webhook_event
+          "messaging_postback": "/callback/messaging_postback", // parameters: sender_psid, postback, webhook_event
           "messaging_account_linking": "/callback/messaging_account_linking",
           "messaging_checkout_updates": "/callback/messaging_checkout_updates",
           "message_deliveries": "/callback/message_deliveries",
           "message_echoes": "/callback/message_echoes",
           "messaging_game_plays": "/callback/messaging_game_plays",
           "messaging_handovers": "/callback/messaging_handovers",
-          "messaging_optins": "/callback/messaging_optins",
+          "messaging_optins": "/callback/messaging_optins", // parameters: sender_psid, optin, webhook_event
           "messaging_payments": "/callback/messaging_payments",
           "messaging_policy_enforcement": "/callback/messaging_policy_enforcement",
-          "messaging_optins": "/callback/messaging_optins",
           "messaging_pre_checkouts": "/callback/messaging_pre_checkouts",
-          "message_reads": "/callback/message_reads",
+          "message_reads": "/callback/message_reads", // parameters: sender_psid, read, webhook_event
           "messaging_referrals": "/callback/messaging_referrals",
           "messaging_standby": "/callback/messaging_standby"
         }
