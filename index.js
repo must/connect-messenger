@@ -48,8 +48,8 @@ module.exports.platform = {
      *
      */
     aliases: {
-      '/messaging/client/getMessagingInsights': '/fb/messaging/client/getMessagingInsights',
-      '/messaging/client/sendText': '/fb/messaging/client/sendText',
+      '/messaging/client/getMessagingInsights': '/fb/messaging/client/getMessagingInsights', // Alias to getMessagingInsights
+      '/messaging/client/sendText': '/fb/messaging/client/sendText', // Alias to sendText
       '/messaging/webhook': '/fb/messaging/webhook',
     }
   },

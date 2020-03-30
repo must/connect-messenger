@@ -8,7 +8,7 @@ const platform = require('connect-platform');
 const messengerAPI = require('../connection');
 
 platform.core.node({
-  path: '/fb/messaging/Client/sendText',
+  path: '/fb/messaging/client/sendText',
 
   public: false,
 

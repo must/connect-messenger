@@ -8,7 +8,7 @@ const platform = require('connect-platform');
 const messengerAPI = require('../connection');
 
 platform.core.node({
-  path: '/fb/messaging/Client/getMessagingInsights',
+  path: '/fb/messaging/client/getMessagingInsights',
 
   public: false,
 
