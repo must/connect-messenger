@@ -1,0 +1,93 @@
+{
+  "path": "/client/sendText",
+  "method": "POST",
+  "public": true,
+  "in": [
+    "id",
+    "text"
+  ],
+  "out": [
+    "result"
+  ],
+  "configs": [],
+  "control": [
+    "error"
+  ],
+  "nodes": [
+    {
+      "tag": "c0",
+      "box": {
+        "left": 751,
+        "right": 993,
+        "top": 536,
+        "bottom": 692
+      },
+      "path": "/fb/messaging/Client/sendText"
+    },
+    {
+      "tag": "e0",
+      "box": {
+        "left": 456,
+        "right": 628,
+        "top": 192,
+        "bottom": 270
+      },
+      "in": [
+        "id"
+      ],
+      "expr": "{ id }"
+    }
+  ],
+  "links": [
+    [
+      {
+        "in": "id"
+      },
+      {
+        "e0": {
+          "in": "id"
+        }
+      }
+    ],
+    [
+      {
+        "e0": "result"
+      },
+      {
+        "c0": {
+          "in": "recipient"
+        }
+      }
+    ],
+    [
+      {
+        "in": "text"
+      },
+      {
+        "c0": {
+          "in": "text"
+        }
+      }
+    ],
+    [
+      {
+        "c0": {
+          "out": "result"
+        }
+      },
+      {
+        "out": "result"
+      }
+    ],
+    [
+      {
+        "c0": {
+          "control": "error"
+        }
+      },
+      {
+        "out": "error"
+      }
+    ]
+  ]
+}

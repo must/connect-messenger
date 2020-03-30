@@ -34,6 +34,7 @@ module.exports.platform = {
        */
       native : [
         '/client/getMessagingInsights',
+        '/client/sendText',
         '/webhook/post',
         '/webhook/get',
        ]
@@ -48,6 +49,7 @@ module.exports.platform = {
      */
     aliases: {
       '/messaging/client/getMessagingInsights': '/fb/messaging/client/getMessagingInsights',
+      '/messaging/client/sendText': '/fb/messaging/client/sendText',
       '/messaging/webhook': '/fb/messaging/webhook',
     }
   },
@@ -57,6 +59,9 @@ module.exports.platform = {
   Otherwise, check the sample configuration below and <a href="https://github.com/amuramoto/messenger-node#readme">this page</a> for a more detailled description on all the options.`,
   sampleConfig: {
       "messenger": {
+        "app": {
+          "secret": "<APP SECRET>"
+        },
         "credentials": {
           "page_token": "<PAGE TOKEN>",
           "app_token": "<APP TOKEN>",
