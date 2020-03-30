@@ -63,3 +63,4 @@ typings/
 # connect platform files
 /secure
 platform-config.json
+platform-config.prod.json
