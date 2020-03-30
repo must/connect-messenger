@@ -1,6 +1,6 @@
 {
   "name": "connect-messenger",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple connect wrapper interface to Facebook Messenger Platform API.",
   "main": ".",
   "scripts": {
