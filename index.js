@@ -79,7 +79,7 @@ module.exports.platform = {
           "message_echoes": "/callback/message_echoes",
           "messaging_game_plays": "/callback/messaging_game_plays",
           "messaging_handovers": "/callback/messaging_handovers",
-          "messaging_optins": "/callback/messaging_optins", // parameters: sender_psid, optin, webhook_event
+          "messaging_optins": "/callback/messaging_optins", // parameters: optin, webhook_event
           "messaging_payments": "/callback/messaging_payments",
           "messaging_policy_enforcement": "/callback/messaging_policy_enforcement",
           "messaging_pre_checkouts": "/callback/messaging_pre_checkouts",

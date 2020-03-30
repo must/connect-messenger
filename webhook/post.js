@@ -82,10 +82,12 @@ platform.core.node({
         // Gets the message. entry.messaging is an array, but 
         // will only ever contain one message, so we get index 0
         const webhook_event = entry.messaging[0];
-        const sender_psid = webhook_event.sender.id;
         const data = {
-          sender_psid: sender_psid,
           webhook_event: webhook_event
+        }
+
+        if('sender' in webhook_event) {
+          data.sender_psid = webhook_event.sender.id;
         }
 
         // Check if the event is a message or postback and
