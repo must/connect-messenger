@@ -92,7 +92,12 @@ platform.core.node({
         // pass the event to the appropriate handler function
         if (webhook_event.message) {
           data.message = webhook_event.message;
-          platform.call(callback_nodes.message, data);
+          
+          if('is_echo' in data.message && data.message.is_echo) {
+            platform.call(callback_nodes.message_echoes, data);
+          } else {
+            platform.call(callback_nodes.message, data);
+          }
         } else if (webhook_event.postback) {
           data.postback = webhook_event.postback;
           platform.call(callback_nodes.messaging_postback, data);
