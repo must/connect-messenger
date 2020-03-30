@@ -17,14 +17,14 @@
         "left": 323,
         "right": 495,
         "top": 135,
-        "bottom": 300
+        "bottom": 315
       },
       "in": [
         "sender_psid",
         "postback",
         "webhook_event"
       ],
-      "expr": "console.log(sender_psid);\nconsole.log(postback);\nconsole.log(webhook_event);"
+      "expr": "console.log(/callback/'messaging_postback');\nconsole.log(sender_psid);\nconsole.log(postback);\nconsole.log(webhook_event);"
     }
   ],
   "links": [

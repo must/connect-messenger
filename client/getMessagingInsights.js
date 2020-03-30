@@ -48,6 +48,8 @@ platform.core.node({
     messengerAPI.client.getMessagingInsights(params)
     .then(res => {
       output('result', res);
+    }).catch(err => {
+      control('error');
     });
   }
 );
