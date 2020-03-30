@@ -4,6 +4,7 @@
  *
  */
 const platform = require('connect-platform');
+const crypto = require('crypto');
 
 const messengerAPI = require('../connection');
 
@@ -33,10 +34,28 @@ platform.core.node({
   }
 },
   (inputs, output, control, _, context) => {
+    const SIG_HEADER_NAME = 'X-Hub-Signature';
+
     let req = context.req;
     let res = context.res;
 
     let body = req.body;
+
+    if(messengerAPI.config.app.secret !== '') {
+      const payload = JSON.stringify(body);
+
+      const sig = req.get(SIG_HEADER_NAME) || '';
+      const hmac = crypto.createHmac('sha1', messengerAPI.config.app.secret);
+      const digest = Buffer.from('sha1=' + hmac.update(payload).digest('hex'), 'utf8');
+      const checksum = Buffer.from(sig, 'utf8');
+
+      if (checksum.length !== digest.length || !crypto.timingSafeEqual(digest, checksum)) {
+        console.error(`Request body digest (${digest}) did not match ${sig} (${checksum})`);
+
+        res.sendStatus(404);
+        return;
+      }
+    }
     
     if (body.object === 'page') {
       // Iterates over each entry - there may be multiple if batched

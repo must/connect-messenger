@@ -33,11 +33,13 @@ platform.core.node({
   }
 },
   (inputs, output, control, _, context) => {
+    console.log('ca;ll');
     let req = context.req;
     let res = context.res;
 
     // Your verify token. Should be a random string.
     let VERIFY_TOKEN = messengerAPI.config.credentials.verify_token;
+    console.log('VERIFY_TOKEN', VERIFY_TOKEN);
     
     // Parse the query params
     let mode = req.query['hub.mode'];

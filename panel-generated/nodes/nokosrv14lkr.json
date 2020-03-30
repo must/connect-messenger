@@ -7,7 +7,9 @@
     "result"
   ],
   "configs": [],
-  "control": [],
+  "control": [
+    "error"
+  ],
   "nodes": [
     {
       "tag": "v0",
@@ -22,12 +24,12 @@
     {
       "tag": "c0",
       "box": {
-        "left": 753,
-        "right": 995,
-        "top": 246,
-        "bottom": 428
+        "left": 856,
+        "right": 1098,
+        "top": 211,
+        "bottom": 393
       },
-      "path": "/fb/messaging/Client/getMessagingInsightsGET"
+      "path": "/fb/messaging/Client/getMessagingInsights"
     },
     {
       "tag": "v1",
@@ -66,16 +68,6 @@
     ],
     [
       {
-        "v0": "result"
-      },
-      {
-        "c0": {
-          "in": "metrics"
-        }
-      }
-    ],
-    [
-      {
         "e0": "result"
       },
       {
@@ -96,12 +88,32 @@
     ],
     [
       {
+        "v0": "result"
+      },
+      {
+        "c0": {
+          "in": "metrics"
+        }
+      }
+    ],
+    [
+      {
         "c0": {
           "out": "result"
         }
       },
       {
         "out": "result"
+      }
+    ],
+    [
+      {
+        "c0": {
+          "control": "error"
+        }
+      },
+      {
+        "out": "error"
       }
     ]
   ]
