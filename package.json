@@ -1,6 +1,6 @@
 {
   "name": "connect-messenger",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple connect wrapper interface to Facebook Messenger Platform API.",
   "main": ".",
   "scripts": {
@@ -21,7 +21,7 @@
     "connect-platform": "*"
   },
   "devDependencies": {
-    "connect-platform": "^0.2.19",
+    "connect-platform": "^0.2.20",
     "nodemon": "^1.19.1"
   },
   "dependencies": {
