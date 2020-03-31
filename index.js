@@ -36,6 +36,7 @@ module.exports.platform = {
         '/client/getMessagingInsights',
         '/client/sendText',
         '/client/getUserProfile',
+        '/client/callSendApi',
         '/webhook/post',
         '/webhook/get',
        ]
@@ -49,9 +50,10 @@ module.exports.platform = {
      *
      */
     aliases: {
-      '/messaging/client/getMessagingInsights': '/fb/messaging/client/getMessagingInsights', // Alias to getMessagingInsights
-      '/messaging/client/sendText': '/fb/messaging/client/sendText', // Alias to sendText
-      '/messaging/client/getUserProfile': '/fb/messaging/client/getUserProfile', // Alias to sendT
+      '/messaging/client/getMessagingInsights': '/fb/messaging/client/getMessagingInsights',
+      '/messaging/client/sendText': '/fb/messaging/client/sendText',
+      '/messaging/client/getUserProfile': '/fb/messaging/client/getUserProfile',
+      '/messaging/client/callSendApi': '/fb/messaging/client/callSendApi',
       '/messaging/webhook': '/fb/messaging/webhook',
     }
   },

@@ -6,21 +6,15 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:4000/client/getMessagingInsights",
+			"name": "getMessagingInsights",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "http://localhost:4000/client/getMessagingInsights",
-					"protocol": "http",
+					"raw": "{{base_url}}/client/getMessagingInsights",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "4000",
 					"path": [
 						"client",
 						"getMessagingInsights"
@@ -30,7 +24,35 @@
 			"response": []
 		},
 		{
-			"name": "localhost:4000/fb/messaging/webhook",
+			"name": "sendText",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/client/sendText?id=2906301646109484&text=HIII",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"client",
+						"sendText"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2906301646109484"
+						},
+						{
+							"key": "text",
+							"value": "HIII"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fb/messaging/webhook",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -45,11 +67,10 @@
 					"raw": "{\"object\": \"page\", \"entry\": [{\"messaging\": [{\"message\": \"TEST_MESSAGE\"}]}]}"
 				},
 				"url": {
-					"raw": "localhost:4000/fb/messaging/webhook",
+					"raw": "{{base_url}}/fb/messaging/webhook",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "4000",
 					"path": [
 						"fb",
 						"messaging",
@@ -64,16 +85,11 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "localhost:4000/fb/messaging/webhook?hub.verify_token=Glamor-friable-meddle-closeGlamor-friable-meddle-close&hub.challenge=CHALLENGE_ACCEPTED&hub.mode=subscribe",
+					"raw": "{{base_url}}/fb/messaging/webhook?hub.verify_token=Glamor-friable-meddle-closeGlamor-friable-meddle-close&hub.challenge=CHALLENGE_ACCEPTED&hub.mode=subscribe",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "4000",
 					"path": [
 						"fb",
 						"messaging",
@@ -96,6 +112,46 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "callSendApi",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"recipient\": {\n\t\t\"id\": \"2906301646109484\"\n\t},\n\t\"payload\": {\n\t\t\"text\": \"test\"\n\t},\n\t\"options\": {\n\t\t\"messaging_type\": \"MESSAGE_TAG\",\n\t\t\"tag\": \"ACCOUNT_UPDATE\"\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/client/callSendApi",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"client",
+						"callSendApi"
+					],
+					"query": [
+						{
+							"key": "receipient",
+							"value": "user_ref_test_7",
+							"disabled": true
+						},
+						{
+							"key": "payload",
+							"value": "HIIIs",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }

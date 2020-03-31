@@ -1,0 +1,81 @@
+{
+  "path": "/client/callSendApi",
+  "method": "POST",
+  "public": true,
+  "in": [
+    "recipient",
+    "payload",
+    "options"
+  ],
+  "out": [
+    "result"
+  ],
+  "configs": [],
+  "control": [
+    "error"
+  ],
+  "nodes": [
+    {
+      "tag": "c0",
+      "box": {
+        "left": 389,
+        "right": 631,
+        "top": 208,
+        "bottom": 390
+      },
+      "path": "/messaging/client/callSendApi"
+    }
+  ],
+  "links": [
+    [
+      {
+        "in": "recipient"
+      },
+      {
+        "c0": {
+          "in": "recipient"
+        }
+      }
+    ],
+    [
+      {
+        "in": "payload"
+      },
+      {
+        "c0": {
+          "in": "payload"
+        }
+      }
+    ],
+    [
+      {
+        "c0": {
+          "out": "result"
+        }
+      },
+      {
+        "out": "result"
+      }
+    ],
+    [
+      {
+        "c0": {
+          "control": "error"
+        }
+      },
+      {
+        "out": "error"
+      }
+    ],
+    [
+      {
+        "in": "options"
+      },
+      {
+        "c0": {
+          "in": "options"
+        }
+      }
+    ]
+  ]
+}
