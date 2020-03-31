@@ -35,6 +35,7 @@ module.exports.platform = {
       native : [
         '/client/getMessagingInsights',
         '/client/sendText',
+        '/client/sendTemplate',
         '/client/getUserProfile',
         '/client/callSendApi',
         '/webhook/post',
@@ -52,6 +53,7 @@ module.exports.platform = {
     aliases: {
       '/messaging/client/getMessagingInsights': '/fb/messaging/client/getMessagingInsights',
       '/messaging/client/sendText': '/fb/messaging/client/sendText',
+      '/messaging/client/sendTemplate': '/fb/messaging/client/sendTemplate',
       '/messaging/client/getUserProfile': '/fb/messaging/client/getUserProfile',
       '/messaging/client/callSendApi': '/fb/messaging/client/callSendApi',
       '/messaging/webhook': '/fb/messaging/webhook',
