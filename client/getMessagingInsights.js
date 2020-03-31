@@ -16,9 +16,9 @@ platform.core.node({
 
   inputs: ['metrics', 'since', 'until'],
 
-  outputs: ['result'],
+  outputs: ['result', 'error'],
 
-  controlOutputs: ['error'],
+  controlOutputs: [ ],
 
   hints: {
     node: 'Get messaging insights according to the requested <span class="hl-blue">metrics</span>, <span class="hl-blue">since</span>, <span class="hl-blue">until</span>.',
@@ -26,16 +26,15 @@ platform.core.node({
     inputs: {
       metrics: 'The <span class="hl-blue">metrics</span> to be used.',
       since: 'The <span class="hl-blue">since</span> date.',
-      until: 'The <span class="hl-blue">until</span> date.',
+      until: 'The <span class="hl-blue">until</span> date.'
     },
     
     outputs: {
-      result: 'The returned <span class="hl-blue">result</span> object.'
+      result: 'The returned <span class="hl-blue">result</span> object.',
+      error: 'This signals that something bad happened with the <span class="hl-blue">request</span>.'
     },
 
-    controlOutputs: {
-      error: 'This signals that something bad happened with the <span class="hl-blue">request</span>.'
-    }
+    controlOutputs: { }
   }
 },
   (inputs, output, control) => {
@@ -49,7 +48,7 @@ platform.core.node({
     .then(res => {
       output('result', res);
     }).catch(err => {
-      control('error');
+      output('error', err.error);
     });
   }
 );

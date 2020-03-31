@@ -7,11 +7,12 @@
     "message",
     "webhook_event"
   ],
-  "out": [],
-  "configs": [],
-  "control": [
-    "error"
+  "out": [
+    "error",
+    "result"
   ],
+  "configs": [],
+  "control": [],
   "nodes": [
     {
       "tag": "e0",
@@ -31,10 +32,10 @@
     {
       "tag": "c0",
       "box": {
-        "left": 670,
-        "right": 912,
-        "top": 388,
-        "bottom": 544
+        "left": 671,
+        "right": 913,
+        "top": 389,
+        "bottom": 571
       },
       "path": "/messaging/client/getUserProfile"
     },
@@ -116,7 +117,19 @@
     [
       {
         "c0": {
-          "control": "error"
+          "out": "result"
+        }
+      },
+      {
+        "e1": {
+          "in": "result"
+        }
+      }
+    ],
+    [
+      {
+        "c0": {
+          "out": "error"
         }
       },
       {
@@ -130,9 +143,7 @@
         }
       },
       {
-        "e1": {
-          "in": "result"
-        }
+        "out": "result"
       }
     ]
   ]

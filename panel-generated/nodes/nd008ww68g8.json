@@ -7,12 +7,11 @@
     "text"
   ],
   "out": [
-    "result"
-  ],
-  "configs": [],
-  "control": [
+    "result",
     "error"
   ],
+  "configs": [],
+  "control": [],
   "nodes": [
     {
       "tag": "c0",
@@ -82,7 +81,7 @@
     [
       {
         "c0": {
-          "control": "error"
+          "out": "error"
         }
       },
       {

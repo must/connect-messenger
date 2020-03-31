@@ -1,9 +1,9 @@
 {
   "/callback/messaging_postback": "nbh55ualyc7s",
-  "/client/getMessagingInsights/": "nokosrv14lkr",
-  "/callback/message": "nfl66ubklo9",
-  "/client/sendText": "nd008ww68g8",
   "/callback/message_reads": "nbh91fhv40a6",
   "/callback/message_echoes": "n5tgs0x48rel",
-  "/client/callSendApi": "nj0l44dj3u6n"
+  "/client/callSendApi": "nj0l44dj3u6n",
+  "/client/sendText": "nd008ww68g8",
+  "/client/getMessagingInsights": "nokosrv14lkr",
+  "/callback/message": "nfl66ubklo9"
 }

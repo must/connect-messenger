@@ -14,11 +14,11 @@ platform.core.node({
 
   method: 'GET',
 
-  inputs: ['psid', 'fields'],
+  inputs: [ 'psid', 'fields' ],
 
-  outputs: ['result'],
+  outputs: ['result', 'error'],
 
-  controlOutputs: ['error'],
+  controlOutputs: [],
 
   hints: {
     node: 'Send <span class="hl-blue">text</span> message to recipient <span class="hl-blue">recipient</span>.',
@@ -29,12 +29,11 @@ platform.core.node({
     },
     
     outputs: {
-      result: 'The returned <span class="hl-blue">result</span> object.'
+      result: 'The returned <span class="hl-blue">result</span> object.',
+      error: 'This signals that something bad happened with the <span class="hl-blue">request</span>.'
     },
 
-    controlOutputs: {
-      error: 'This signals that something bad happened with the <span class="hl-blue">request</span>.'
-    }
+    controlOutputs: { }
   }
 },
   (inputs, output, control) => {
@@ -44,6 +43,7 @@ platform.core.node({
       output('result', res);
     }).catch(err => {
       console.error(err);
+      output('error', err.error);
     });
   }
 );

@@ -1,15 +1,14 @@
 {
-  "path": "/client/getMessagingInsights/",
+  "path": "/client/getMessagingInsights",
   "method": "GET",
   "public": true,
   "in": [],
   "out": [
-    "result"
-  ],
-  "configs": [],
-  "control": [
+    "result",
     "error"
   ],
+  "configs": [],
+  "control": [],
   "nodes": [
     {
       "tag": "v0",
@@ -24,12 +23,12 @@
     {
       "tag": "c0",
       "box": {
-        "left": 856,
-        "right": 1098,
-        "top": 211,
-        "bottom": 393
+        "left": 855,
+        "right": 1097,
+        "top": 210,
+        "bottom": 392
       },
-      "path": "/fb/messaging/Client/getMessagingInsights"
+      "path": "/fb/messaging/client/getMessagingInsights"
     },
     {
       "tag": "v1",
@@ -109,7 +108,7 @@
     [
       {
         "c0": {
-          "control": "error"
+          "out": "error"
         }
       },
       {
