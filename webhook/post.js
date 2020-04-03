@@ -44,7 +44,7 @@ platform.core.node({
     if(messengerAPI.config.app.secret !== '') {
       const sig = req.get(SIG_HEADER_NAME) || '';
 
-      const hmac = crypto.createHmac('sha1', messengerAPI.config.app.secret);;
+      const hmac = crypto.createHmac('sha1', messengerAPI.config.app.secret);
       hmac.update(req.raw, 'utf-8');
 
       const checksum = Buffer.from(sig, 'utf8');
